@@ -2,6 +2,11 @@
 
 A test with Docker I did to see how I can change file permissions of files created by Docker.
 
+## Problem
+
+After installing the composer dependencies, the `vendor` folder will 
+be created but it will be owned by root. This is the problem.
+
 ## Build
 
 ```bash
@@ -20,11 +25,6 @@ Now install the composer dependencies:
 ```bash
 docker-compose run --rm composer install
 ```
-
-## Problem
-
-After installing the composer dependencies, the `vendor` folder will 
-be created but it will be owned by root. This is the problem.
 
 ## Run
 
