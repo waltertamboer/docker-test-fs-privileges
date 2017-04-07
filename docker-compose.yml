@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  webserver:
+    build:
+      context: ./docker/httpd/
+    volumes:
+      - ./:/var/www
+    working_dir: /var/www
+
+  composer:
+    image: composer/composer:alpine
+    volumes:
+      - ./:/var/www/
+      - ~/.composer:/home/composer/.composer
+      - ~/.ssh:/home/composer/.ssh
+    working_dir: /var/www
